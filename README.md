@@ -18,12 +18,12 @@ REST API for tracking user incomes, expenses, categories, savings goals, and gen
 
 ## API base URL
 
-`https://your-app-name.onrender.com/api`
+`https://finance-manager-i7us.onrender.com/api`
 
 ## How to run the test script
 
 ```bash
-bash financial_manager_tests.sh http://localhost:8080/api
+bash financial_manager_tests.sh https://finance-manager-i7us.onrender.com/api
 ```
 
 ## Design decisions
