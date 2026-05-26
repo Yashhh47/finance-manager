@@ -35,8 +35,12 @@ public class TransactionResponse {
     public String getCategoryName() { return categoryName; }
     public void setCategoryName(String categoryName) { this.categoryName = categoryName; }
 
+    public String getCategory() { return categoryName; }
+
     public String getCategoryType() { return categoryType; }
     public void setCategoryType(String categoryType) { this.categoryType = categoryType; }
+
+    public String getType() { return categoryType; }
 
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }

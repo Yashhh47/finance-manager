@@ -1,5 +1,6 @@
 package com.yash.Finance.manager.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -16,6 +17,7 @@ public class TransactionRequest {
     private LocalDate date;
 
     @NotBlank(message = "Category name is required")
+    @JsonAlias({"category", "categoryName"})
     private String categoryName;
 
     private String description;
