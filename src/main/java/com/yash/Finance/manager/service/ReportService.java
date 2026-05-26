@@ -99,7 +99,7 @@ public class ReportService {
             monthData.put("month", month);
             monthData.put("totalIncome", monthIncome);
             monthData.put("totalExpenses", monthExpenses);
-            monthData.put("netSavings", monthIncome.subtract(monthExpenses));
+            monthData.put("monthlySavings", monthIncome.subtract(monthExpenses));
             monthlyBreakdown.add(monthData);
         }
 
