@@ -9,9 +9,9 @@
 		<relativePath/>
 	</parent>
 	<groupId>com.yash</groupId>
-	<artifactId>Finance-manager</artifactId>
+	<artifactId>finance-manager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Finance-manager</name>
+	<name>finance-manager</name>
 	<description>Personal Finance Manager REST API</description>
 
 	<properties>
