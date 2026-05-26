@@ -126,7 +126,7 @@ public class TransactionServiceTest {
         when(transactionRepository.findFiltered(testUser, null, null, null))
                 .thenReturn(List.of(testTransaction));
 
-        List<TransactionResponse> result = transactionService.getAll(null, null, null);
+        List<TransactionResponse> result = transactionService.getAll(null, null, null, null);
 
         assertNotNull(result);
         assertEquals(1, result.size());
@@ -141,7 +141,7 @@ public class TransactionServiceTest {
         when(transactionRepository.findFiltered(testUser, null, null, testCategory))
                 .thenReturn(List.of(testTransaction));
 
-        List<TransactionResponse> result = transactionService.getAll(null, null, 10L);
+        List<TransactionResponse> result = transactionService.getAll(null, null, 10L, null);
 
         assertNotNull(result);
         assertEquals(1, result.size());
@@ -154,7 +154,7 @@ public class TransactionServiceTest {
         when(categoryRepository.findById(99L)).thenReturn(Optional.empty());
 
         assertThrows(NotFoundException.class, () -> {
-            transactionService.getAll(null, null, 99L);
+            transactionService.getAll(null, null, 99L, null);
         });
         verify(transactionRepository, never()).findFiltered(any(), any(), any(), any());
     }

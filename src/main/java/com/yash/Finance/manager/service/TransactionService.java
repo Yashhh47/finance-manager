@@ -53,13 +53,15 @@ public class TransactionService {
         return toResponse(saved);
     }
 
-    public List<TransactionResponse> getAll(LocalDate startDate, LocalDate endDate, Long categoryId) {
+    public List<TransactionResponse> getAll(LocalDate startDate, LocalDate endDate, Long categoryId, String categoryName) {
         User user = authService.getCurrentUser();
 
         Category category = null;
         if (categoryId != null) {
             category = categoryRepository.findById(categoryId)
                     .orElseThrow(() -> new NotFoundException("Category not found"));
+        } else if (categoryName != null && !categoryName.isBlank()) {
+            category = resolveCategory(categoryName, user);
         }
 
         List<Transaction> transactions = transactionRepository.findFiltered(user, startDate, endDate, category);

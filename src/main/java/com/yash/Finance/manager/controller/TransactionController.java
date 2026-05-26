@@ -33,8 +33,9 @@ public class TransactionController {
     public ResponseEntity<Map<String, List<TransactionResponse>>> getAll(
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate,
-            @RequestParam(required = false) Long categoryId) {
-        List<TransactionResponse> transactions = transactionService.getAll(startDate, endDate, categoryId);
+            @RequestParam(required = false) Long categoryId,
+            @RequestParam(required = false) String category) {
+        List<TransactionResponse> transactions = transactionService.getAll(startDate, endDate, categoryId, category);
         return ResponseEntity.ok(Map.of("transactions", transactions));
     }
 
